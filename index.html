@@ -7,7 +7,7 @@
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
     <!-- Favicon -->
-    <link href="favicon.ico" rel="icon">
+    <link href="./favicon.ico" rel="icon">
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap" rel="stylesheet"> 
@@ -57,6 +57,58 @@
     <!-- Page Header Start -->
 
     <!-- Contact Start -->
+    <section class="site-section section-contact">
+        <div class="container">
+            <div class="contact-form-container">
+                <form class="contact-form" action="https://formsubmit.co/alejandrofernandezperez@protonmail.com" method="POST">
+                    <div class="input-group">
+                        <label for="nombre">Nombre: <span class="required"></span></label>
+                        <input type="text" name="nombre" id="nombre" placeholder="Escribe tu nombre......" required/>
+                    </div>
+                    <div class="input-group">
+                        <label for="apellidos">Apellidos: <span class="required"></span></label>
+                        <input type="text" name="apellidos" id="apellidos" placeholder="Escribe tus apellidos......" required/>
+                    </div>
+                    <div class="input-group">
+                        <label for="email">Correo electrónico: <span class="required"></span></label>
+                        <input type="email" name="email" id="email" placeholder="xxxxx@service-mail.com" required/>
+                    </div>
+                    <div class="input-group">
+                        <label for="telefono">Teléfono/móvil: </label>
+                        <select name="codigo" id="codigo" onchange="handleCustomCode(this)">
+                            <option value="" disabled selected>+ Código</option>
+                            <option value="+34">🇪🇸 +34 (España)</option>
+                            <option value="+1">🇺🇸 +1 (EE. UU.)</option>
+                            <option value="+52">🇲🇽 +52 (México)</option>
+                            <option value="+44">🇬🇧 +44 (Reino Unido)</option>
+                            <option value="+49">🇩🇪 +49 (Alemania)</option>
+                            <option value="custom">Escribir código...</option>
+                        </select>
+                        <input type="text" name="custom-codigo" id="custom-codigo" placeholder="+229" inputmode="numeric" style="display: none;" oninput="updateCode()"/>
+                        <input type="number" name="telefono" id="telefono" placeholder="6XX XX XX XX"/>
+                    </div>
+                    <div class="input-group">
+                        <label for="asunto">Asunto: <span class="required"></span></label>
+                        <input type="text" name="asunto" id="asunto" placeholder="Escribe un asunto......." required/>
+                    </div>
+                    <div class="input-group">
+                        <label for="mensaje">Mensaje: <span class="required"></span></label>
+                        <textarea name="mensaje" id="mensaje" rows="8" placeholder="Escribe un mensaje....." required></textarea>
+                    </div>
+                    <div class="input-group">
+                        <label for="captcha">¿Cuánto es 3 + 4? <span class="required"></span></label>
+                        <input type="text" id="captcha" name="captcha">
+                    </div>
+                    <input type="hidden" name="_next" value="https://alejandrocontactweb.netlify.app/"/>
+                    <input type="hidden" name="_captcha" value="false"/>
+                    <input type="text" name="_honey" style="display:none"/>
+                    <button type='submit'>Enviar</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- Contact End -->
+
     <div class="container-fluid py-5">
         <div class="container" style="max-width: 900px;">
             <div class="row">
@@ -88,79 +140,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12">
-                    <div class="contact-form">
-                        <form action="https://formsubmit.co/alejandrofernandezperez@protonmail.com" method="POST">
-                            <div class="form-row">
-                                <div class="col-md-6">
-                                    <div class="control-group">
-                                        <label for="name">Nombre: <span class="required"></span></label>
-                                        <input type="text" class="form-control" name="name" id="name" placeholder="Escribe tu nombre...." required/>
-                                        <p class="help-block text-danger"></p>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="control-group">
-                                        <label for="apellidos">Apellidos: <span class="required"></span></label>
-                                        <input type="text" class="form-control" name="apellidos" id="apellidos" placeholder="Escribe tus apellidos...." required/>
-                                        <p class="help-block text-danger"></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="col-md-6">
-                                    <div class="control-group">
-                                        <label for="email">Correo electrónico: <span class="required"></span></label>
-                                        <input type="email" class="form-control" name="email" id="email" placeholder="xxxxxxxxx@service-mail.com" required/>
-                                        <p class="help-block text-danger"></p>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="control-group">
-                                        <label for="telefono">Teléfono/móvil: <span class="required"></span></label>
-                                        <select name="codigo" id="codigo" onchange="handleCustomCode(this)">
-                                            <option value="" disabled selected>+ Código</option>
-                                            <option value="+34">🇪🇸 +34 (España)</option>
-                                            <option value="+1">🇺🇸 +1 (EE. UU.)</option>
-                                            <option value="+52">🇲🇽 +52 (México)</option>
-                                            <option value="+44">🇬🇧 +44 (Reino Unido)</option>
-                                            <option value="+49">🇩🇪 +49 (Alemania)</option>
-                                            <option value="custom">Escribir código...</option>
-                                        </select>
-                                        <input type="text" name="custom-codigo" id="custom-codigo" placeholder="+229" inputmode="numeric" style="display: none;" oninput="updateCode()"/>
-                                        <input type="number" name="telefono" id="telefono" placeholder="6XX XX XX XX"/>
-                                        <p class="help-block text-danger"></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="control-group">
-                                <label for="asunto">Asunto: <span class="required"></span></label>
-                                <input type="text" class="form-control" id="subject" placeholder="Escribe un asunto......." required/>
-                                <p class="help-block text-danger"></p>
-                            </div>
-                            <div class="control-group">
-                                <label for="mensaje">Mensaje: <span class="required"></span></label>
-                                <textarea class="form-control" rows="8" id="message" placeholder="Escribe un mensaje....." required></textarea>
-                                <p class="help-block text-danger"></p>
-                            </div>
-                            <div class="control-group">
-                                <label for="captcha">¿Cuánto es 3 + 4? <span class="required"></span></label>
-                                <input type="text" id="captcha" name="captcha"/>
-                            </div>
-                            <br>
-                            <div>
-                                <input type="hidden" name="_next" value="https://alejandrocontactweb.netlify.app/"/>
-                                <input type="hidden" name="_captcha" value="false"/>
-                                <input type="text" name="_honey" style="display:none"/>
-                                <button class="btn btn-primary py-3 px-5" type="submit" id="sendMessageButton">Enviar</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
-    <!-- Contact End -->
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-white py-4 px-sm-3 px-md-5"><p class="m-0 text-center text-white">Copyright &copy; 2023-2030 <a class="text-white font-weight-medium" href="./index.html">My Contact WEB</a> - Todos los derechos reservados</p></div>
